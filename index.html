@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever Yours, Keem 💗</title>
+<style>
+:root {
+  --pink:#ff6eaa; --hot:#ff438b; --pale:#ffd1e6; --white:#fff8fd;
+  --lavender:#d6b5ff; --gold:#ffe6b0;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,'Times New Roman',serif;color:var(--white)}
+body{
+  min-height:100vh; overflow-x:hidden; display:flex; justify-content:center; align-items:center;
+  background:linear-gradient(155deg,#171334 0%,#2b1a4b 48%,#54265f 100%);
+}
+.scene{
+  position:relative; isolation:isolate; width:min(100%,1000px); min-height:100vh;
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  padding:24px 18px 30px; overflow:hidden;
+}
+.scene:before,.scene:after{
+  content:"";position:absolute;z-index:-2;bottom:-130px;width:75vw;height:290px;border-radius:50%;
+  background:#211746;filter:blur(1px)
+}
+.scene:before{left:-20%}.scene:after{right:-22%;background:#2a174c}
+#sky{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.moon{position:absolute;right:9%;top:50px;width:76px;height:76px;border-radius:50%;background:#fff1c7;box-shadow:0 0 32px #fff1c766}
+.moon:after{content:"";position:absolute;width:70px;height:70px;left:18px;top:-10px;border-radius:50%;background:#1b143a}
+.twinkle{position:absolute;color:var(--gold);animation:twinkle 2s infinite alternate}
+.twinkle.one{right:19%;top:145px}.twinkle.two{right:7%;top:175px;animation-delay:.8s}
+@keyframes twinkle{from{opacity:.35;transform:scale(.8)}to{opacity:1;transform:scale(1.15)}}
+.kicker{font:700 14px Arial,sans-serif;letter-spacing:4px;color:var(--pale);margin-top:7px}
+h1{font-size:clamp(35px,7vw,54px);margin:8px 0;color:var(--white);text-shadow:0 0 20px #ff6eaa66}
+.subtitle{font-size:16px;font-style:italic;color:#d9caff;margin:0 0 8px}
+.middle{position:relative;width:min(94vw,550px);height:320px;display:flex;align-items:center;justify-content:center}
+.heart-glow{position:absolute;width:255px;height:255px;background:#ff438b22;filter:blur(32px);border-radius:50%;animation:glow 2s ease-in-out infinite alternate}
+@keyframes glow{to{transform:scale(1.17);opacity:.7}}
+.heart-svg{width:min(66vw,300px);height:auto;overflow:visible;filter:drop-shadow(0 0 10px #ff438b88);animation:heartbeat 1.5s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.heart-shape{fill:url(#heartFill);stroke:#fff8fd;stroke-width:1.7}
+.heart-shine{fill:none;stroke:#ffd1e6;stroke-width:2;stroke-linecap:round;opacity:.7}
+.typed{font:700 clamp(19px,4vw,26px) Georgia,serif;min-height:35px;margin-top:-5px}
+.little-note{font-size:15px;font-style:italic;color:var(--pale);margin:10px 0 20px}
+.lower{display:flex;align-items:flex-end;justify-content:center;gap:clamp(15px,5vw,60px);width:100%;margin-top:auto}
+.bunny-wrap{width:145px;flex-shrink:0;animation:bunnyBob 2.4s ease-in-out infinite}
+@keyframes bunnyBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.bunny{width:130px;max-width:100%;height:auto;filter:drop-shadow(0 7px 8px #0a071d55)}
+.bunny-caption{font-size:11px;font-style:italic;color:#f6c9e2;margin-top:0}
+.buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:0 0 12px;max-width:620px}
+button{border:0;border-radius:999px;padding:14px 20px;background:var(--pink);color:#32102c;font:700 13px Arial,sans-serif;letter-spacing:.3px;cursor:pointer;box-shadow:0 6px 22px #ff438b33;transition:transform .2s,background .2s,box-shadow .2s}
+button:hover,button:focus-visible{background:#ffc0df;transform:translateY(-3px) scale(1.03);box-shadow:0 9px 27px #ff438b66;outline:none}
+button.secondary{background:#e4d1ff;color:#321c4a}
+button.secondary:hover{background:#f3eaff}
+.surprise{min-height:28px;color:var(--gold);font-size:clamp(13px,2.6vw,16px);font-weight:bold;padding:8px 12px;max-width:760px}
+.float-heart{position:fixed;pointer-events:none;z-index:5;animation:floatUp 2.8s ease-out forwards}
+@keyframes floatUp{0%{opacity:0;transform:translateY(20px) scale(.5)}15%{opacity:1}100%{opacity:0;transform:translateY(-180px) rotate(25deg) scale(1.25)}}
+.footer{font:11px Arial,sans-serif;letter-spacing:1px;color:#c5b3e3;margin-top:5px}
+@media(max-width:520px){
+ .scene{padding:22px 12px 20px}.moon{width:54px;height:54px;right:7%;top:30px}.moon:after{width:51px;height:51px;left:13px;top:-7px}
+ .middle{height:260px}.bunny-wrap{width:100px}.bunny{width:94px}.lower{gap:12px}.buttons{gap:9px}button{padding:12px 15px;font-size:11px}
+ .kicker{font-size:11px;letter-spacing:3px}.subtitle{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="scene">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="moon" aria-hidden="true"></div>
+  <span class="twinkle one" aria-hidden="true">✦</span><span class="twinkle two" aria-hidden="true">✧</span>
+  <div class="kicker">A LITTLE LOVE FOR</div>
+  <h1>NEVAEH</h1>
+  <p class="subtitle">Made with love, just for you ✨</p>
+
+  <section class="middle" aria-label="Animated pink heart">
+    <div class="heart-glow"></div>
+    <svg class="heart-svg" viewBox="0 0 300 280" role="img" aria-label="A glowing pink heart">
+      <defs><linearGradient id="heartFill" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff9ac7"/><stop offset="55%" stop-color="#ff6eaa"/><stop offset="100%" stop-color="#ff438b"/></linearGradient></defs>
+      <path class="heart-shape" d="M150 254 C128 230 23 159 23 87 C23 22 105 13 150 71 C195 13 277 22 277 87 C277 159 172 230 150 254Z"/>
+      <path class="heart-shine" d="M53 81 C55 51 81 40 103 48"/>
+      <text x="150" y="151" text-anchor="middle" font-size="47" fill="#ffb3d5">♥</text>
+    </svg>
+  </section>
+
+  <div class="typed" id="typed" aria-live="polite"></div>
+  <p class="little-note">You make my world brighter every day.</p>
+
+  <div class="lower">
+    <div class="bunny-wrap" aria-label="Cute love bunny">
+      <svg class="bunny" viewBox="0 0 150 165" role="img" aria-label="Cute white bunny with a pink heart">
+        <ellipse cx="53" cy="36" rx="17" ry="38" fill="#fff5fb" stroke="#e9c9e0" stroke-width="2" transform="rotate(-9 53 36)"/>
+        <ellipse cx="97" cy="34" rx="17" ry="40" fill="#fff5fb" stroke="#e9c9e0" stroke-width="2" transform="rotate(9 97 34)"/>
+        <ellipse cx="53" cy="37" rx="7" ry="26" fill="#ffb6d9" transform="rotate(-9 53 37)"/>
+        <ellipse cx="97" cy="35" rx="7" ry="27" fill="#ffb6d9" transform="rotate(9 97 35)"/>
+        <ellipse cx="75" cy="112" rx="40" ry="43" fill="#fff5fb" stroke="#e9c9e0" stroke-width="2"/>
+        <circle cx="75" cy="75" r="42" fill="#fff5fb" stroke="#e9c9e0" stroke-width="2"/>
+        <ellipse cx="56" cy="82" rx="8" ry="5" fill="#ffb2d0"/><ellipse cx="94" cy="82" rx="8" ry="5" fill="#ffb2d0"/>
+        <ellipse cx="62" cy="70" rx="3.8" ry="5" fill="#35203c"/><ellipse cx="88" cy="70" rx="3.8" ry="5" fill="#35203c"/>
+        <path d="M71 79 Q75 85 79 79 Q75 89 71 79" fill="#ff7fae"/>
+        <path d="M75 87 Q68 94 63 88 M75 87 Q82 94 87 88" fill="none" stroke="#8d637f" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="55" cy="143" rx="19" ry="10" fill="#fff5fb" stroke="#e9c9e0" stroke-width="2"/>
+        <ellipse cx="95" cy="143" rx="19" ry="10" fill="#fff5fb" stroke="#e9c9e0" stroke-width="2"/>
+        <text x="75" y="119" text-anchor="middle" font-size="27" fill="#ff438b">♥</text>
+      </svg>
+      <div class="bunny-caption">your little love bunny</div>
+    </div>
+    <div class="buttons">
+      <button id="loveBtn">I LOVE YOU VERY MUCH 💗</button>
+      <button class="secondary" id="foreverBtn">FOREVER YOURS 💖</button>
+    </div>
+  </div>
+  <div class="surprise" id="surprise" aria-live="polite"></div>
+  <div class="footer">MADE WITH LOVE · FOREVER YOURS, KEEM</div>
+</main>
+<script>
+(() => {
+  const canvas = document.getElementById('sky');
+  const ctx = canvas.getContext('2d');
+  let w = 0, h = 0, stars = [], particles = [];
+  const colors = ['#fff8fd','#ffd1e6','#d6b5ff','#ffe6b0'];
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth; h = canvas.clientHeight;
+    canvas.width = Math.floor(w*dpr); canvas.height = Math.floor(h*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    stars = Array.from({length: Math.max(70, Math.floor(w*h/6500))}, () => ({
+      x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.7+.4,
+      phase:Math.random()*Math.PI*2,speed:.5+Math.random()*2
+    }));
+    particles = Array.from({length:24}, () => ({
+      x:Math.random()*w,y:Math.random()*h,size:2+Math.random()*4,
+      speed:12+Math.random()*25,phase:Math.random()*6.28
+    }));
+  }
+  function draw(t) {
+    ctx.clearRect(0,0,w,h);
+    stars.forEach(s => {
+      const alpha=.35+.65*(.5+.5*Math.sin(t*.001*s.speed+s.phase));
+      ctx.globalAlpha=alpha;ctx.fillStyle=colors[Math.floor(s.phase*3)%colors.length];
+      ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fill();
+    });
+    particles.forEach(p => {
+      p.y -= p.speed/60;
+      p.x += Math.sin(t*.0008+p.phase)*.35;
+      if(p.y < -10){p.y=h+10;p.x=Math.random()*w;}
+      ctx.globalAlpha=.38;ctx.fillStyle='#ffb6d9';
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+    });
+    ctx.globalAlpha=1;
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',resize);resize();requestAnimationFrame(draw);
+
+  const text = 'I LOVE YOU, NEVAEH ❤️';
+  const typed = document.getElementById('typed');
+  let i = 0;
+  function typeNext(){
+    if(i <= text.length){typed.textContent=text.slice(0,i);i++;setTimeout(typeNext,105);}
+  }
+  typeNext();
+
+  function burst(count=18){
+    const emojis=['♥','💗','💕','✦'];
+    for(let n=0;n<count;n++){
+      const el=document.createElement('span');el.className='float-heart';
+      el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+      el.style.left=(10+Math.random()*80)+'vw';
+      el.style.top=(45+Math.random()*40)+'vh';
+      el.style.fontSize=(15+Math.random()*23)+'px';
+      el.style.color=['#ff6eaa','#ffd1e6','#ffe6b0','#d6b5ff'][n%4];
+      document.body.appendChild(el);setTimeout(()=>el.remove(),3000);
+    }
+  }
+  document.getElementById('loveBtn').addEventListener('click',()=>{
+    document.getElementById('surprise').textContent='I love you very much, Nevaeh. More than words can say! 💗';
+    burst(16);
+  });
+  document.getElementById('foreverBtn').addEventListener('click',()=>{
+    document.getElementById('surprise').textContent='You are my favorite person, today and always. Forever yours, Keem. 💞';
+    burst(28);
+  });
+})();
+</script>
+</body>
+</html>
